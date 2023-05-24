@@ -15,5 +15,3 @@ for (x, y, w, h) in face_coordinates:
 
 cv2.imshow('Program', img)
 cv2.waitKey()
-
-print("Code Completed")

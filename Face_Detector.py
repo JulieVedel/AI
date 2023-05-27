@@ -1,17 +1,19 @@
 import cv2
 
-trained_face_data = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+data = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-img = cv2.imread('Angelina.jpg')
+image = cv2.imread('Angelina.jpg')
 
-grayscaled_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+grayscaledImage = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-face_coordinates = trained_face_data.detectMultiScale(grayscaled_img)
+faceCoordinates = data.detectMultiScale(grayscaledImage)
 
-for (x, y, w, h) in face_coordinates:
-    cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
+for (x, y, w, h) in faceCoordinates:
+    cv2.rectangle(image, (x, y), (x+w, y+h), (0, 0, 255), 2)
 
 
 
-cv2.imshow('Program', img)
+cv2.imshow('Program', image)
 cv2.waitKey()
+
+
